@@ -4,7 +4,7 @@ import axios from "axios";
 // ----------------------------------------------------------------------
 
 const axiosInstance = axios.create({
-  baseURL: "https://blog.faculdaderealiza.com.br:3030",
+  baseURL: "http://localhost:3030",
 });
 
 axiosInstance.interceptors.response.use(
