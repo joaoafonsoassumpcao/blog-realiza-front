@@ -1,10 +1,9 @@
 import axios from "axios";
-// config
 
 // ----------------------------------------------------------------------
 
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:3030",
+  baseURL: "http://blog.faculdaderealiza.com.br:3030",
 });
 
 axiosInstance.interceptors.response.use(
