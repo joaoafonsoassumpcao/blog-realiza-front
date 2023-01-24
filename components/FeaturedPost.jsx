@@ -6,39 +6,37 @@ import Card from "@mui/material/Card";
 import CardActionArea from "@mui/material/CardActionArea";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-//import Button from "@mui/material/Button";
+import { CardActions, Button } from "@mui/material";
+
 import Link from "next/link";
 
 function FeaturedPost(props) {
   const { post } = props;
 
   return (
-    <Grid item xs={12} md={6}>
-      <CardActionArea component="a" href="#">
-        <Card sx={{ display: "flex" }}>
-          <CardContent sx={{ flex: 1 }}>
-            <Typography component="h2" variant="h5">
+    <Grid item xs={12} md={4}>
+      <CardActionArea component="a" href={`/post/${post?.id}`}>
+        <Card style={{ height: "100%" }}>
+          <CardMedia
+            sx={{ height: 200 }}
+            image={post?.image}
+            title={post?.title}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
               {post?.title}
             </Typography>
-            <Typography variant="subtitle2" color="text.secondary">
-              {post?.date}
-            </Typography>
-            <Typography variant="subtitle1" paragraph>
+            <Typography variant="body2" color="text.secondary">
               {post?.resumo}
             </Typography>
-            <Link href={`/post/${post?.id}`} className="button-style">
-              {/* <Button variant="contained" sx={{ color: "#fff" }}>
-                Ler agora
-              </Button> */}
-              Ler agora
-            </Link>
           </CardContent>
-          <CardMedia
-            component="img"
-            sx={{ width: 160, display: { xs: "block", sm: "block" } }}
-            image={post?.image}
-            alt={post?.title}
-          />
+          <CardActions>
+            <Link href={`/post/${post?.id}`} className="button-style">
+              <Button size="small" style={{ color: "white" }}>
+                LER MAIS
+              </Button>
+            </Link>
+          </CardActions>
         </Card>
       </CardActionArea>
     </Grid>

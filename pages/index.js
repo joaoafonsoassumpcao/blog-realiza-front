@@ -3,7 +3,7 @@ import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import FeaturedPost from "../components/FeaturedPost";
 import { useState, useEffect } from "react";
-import MainFeaturedPost from "../components/MainFeaturedPost";
+//import MainFeaturedPost from "../components/MainFeaturedPost";
 import axiosInstance from "../utils/axios";
 import Head from "next/head";
 
@@ -36,7 +36,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <MainFeaturedPost post={posts[0]} />
+        {/* <MainFeaturedPost post={posts[0]} /> */}
         <Grid container spacing={4}>
           {posts
             .filter((item, idx) => idx < 12)
